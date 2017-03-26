@@ -1,58 +1,81 @@
-<p align="center">
-    <img alt="Bit" src="https://s29.postimg.org/q9flqqoif/cover_github_1.png" width="500">
+
+<p align="left">
+<h1>Bit</h1>
+</p>
+<div style="text-align:left">
+  <a href="https://opensource.org/licenses/Apache-2.0"><img alt="apache" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg"></a>
+  <a href="https://github.com/teambit/bit/blob/master/CONTRIBUTING.md"><img alt="prs" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg"></a>
+  <a href="https://github.com/teambit/bit/blob/master/CHANGELOG.md"><img alt="Appveyor Status" src="https://ci.appveyor.com/api/projects/status/vg7wvfvku12kkxkc?svg=true"></a>
+  <a href="https://github.com/teambit/bit/blob/master/CHANGELOG.md"><img alt="Circle Status" src="https://circleci.com/gh/teambit/bit/tree/master.svg?style=shield&circle-token=d9fc5b19b90fb7e0655d941a5d7f21b61174c4e7"></a>
 </p>
 
+</div>
+
+Bit is a distributed and virtualized code component repository designed to be language agnostic.  
+
+With Bit you can create and model code components on a vritualized [Scope](https://teambit.github.io/bit/bit-scope.html), using them as a dynamic API made only of the components actually used in your application.
+
+Bit components can be reused in different contexts (repositories, micro-services, packages, etc.) without the overhead of configuring and maintaining multiple repos, packages and other tools for every few lines of code.
+
 <p align="center">
-<b>Distributed code component manager</b>
+  <img src="https://storage.googleapis.com/bit-assets/gifs/leftpad2.gif" height="500">
 </p>
-<p align="center">
-  <a href="https://ci.appveyor.com/project/TeamBit/bit"><img alt="Appveyor Status" src="https://ci.appveyor.com/api/projects/status/pr2caxu6awb387lr?svg=true"></a>
-</p>
----
 
-Bit is a distributed, fast and language-agnostic code component manager designed for easy use, maintenance and discovery of code components.
+## Why Bit
 
-**Easily reuse code components:** Open source tool for fast and easy extraction and reuse of code components without creating code duplications or having to publish tiny packages.
+Code components are the fundamental building blocks of any application.
+Different functionalities can and should be reused in different contexts, projects and repositories. In practice, this rarely happens. Building and maintaining an arsenal of tiny repositories and micro-packages for all your different components isn't practical. As a result, people often end up duplicating code everywhere or using vast libraries with static APIs that contain redundant code and dependencies they don’t need. This happens for for a few reasons:
 
-**Easy to maintain:** Easily maintain all your components in one place. Isolated component environment and simplified versioning make life even easier.
+* Initial overhead: to create a new repository and package for every small component you would have to create a VCS repository, create the package boilerplate (build, testing, etc.) and somehow make this process practical for a large set of components.
 
-**Simple to find:** A built-in functional search and a simple scoping mechanism make it simple to find components created by you, your team or the community. Thanks to the component isolated environment, components can be built and run anywhere.
+* Maintenance: modifying a repository and a package takes time and forces you to go through multiple steps such as cloning, linking, debugging, committing, republishing and so on. Centralized registries also makes it hard to address the different levels of abstraction needed for multiple micro-packages. Build and install times quickly increase and dependency hell always feels near.
 
-Bit currently supports JavaScript. We plan to add drivers for more languages as soon as we can. We always love some help.
+* Discoverability: it’s hard if not impossible to organize and search multiple repositories and packages to quickly find the components you need. People often used different terms to describe the same functionality, and there is no single source of truth to search and trust.
 
-## Why...?
+### Built for code components
 
-We beleive that the more code gets reused across software projects - the better.
+Bit solves all of these problems. It adds a level of abstraction on top of your source files, allowing you to create and model components in a vritualized repository. These components can be found and used individually as a dynamic API containing nothing but the code actually used in your application. Bit is designed from the ground to make code components reusbale:
 
-Currently the best way to reuse code is to package it, and distribute via package managers. 
-In theory it should work, but in practice it's not so simple. Packaging small pieces of code is an over
-kill for most uses cases (would you go to all the trouble to package 'isString'?). The packaging
-overhead causes many developers to prefer copy-pasting code snippets instead (the infamus left-pad
-discussion). 
+- **Virtual Scope.** Bit uses a distributed and virtual repository called a Scope to keep and maintain all your components in a single place, while still being able to independently find, use and modify each component. You can define the components needed in your application to form a dynamic API made of these components alone, without pulling any redundant code or irrelevant dependencies.
 
-This is why we built Bit. To make distributing the small pieces of functionality a simple and easy
-task. We want tTo make it a part of the workflow and routine of how we code.
+- **Component environment.** Bit lowers the overhead of creating and maintaining multiple reusbale components. An isolated configurable environment uses other Bit components (compiler and tester) for transpiling and testing any component using any superset or a testing framework in any context.
 
-## Features
+- **Component discovery engine.** Bit comes with an integrated search engine that uses expressive linguistic models to make your components discoverable even when you forget the exact name you gave each component. This also helps for collaborating as a team on shared Scopes.
 
-* **Fast & Easy component export.** Easily export a component to be reused anywhere by you or your team - all in less than a minute.
-* **Code environment boilerplate.** Components are isolated, and contain their own full working environment, ready to be shipped and used anywhere.
-* **Components can build and run anywhere.** Thanks to the Bit component environment. 
-* **Simplified minor versioning.** Components versions is incremental for easier update and maintenance.
-* **Internal search engine.** Find code components in local and remote locations.
-* **On-export dependency resolution.** All dependencies are kept with your component, to keep components immutable while downloading.
-* **Distributed.** Multiple backups, works offline and supports any workflow.
+## Documentation
 
-## Getting Started
+[Docs](https://teambit.github.io/bit)
 
-1. [Install instructions](https://github.com/teambit/bit/wiki/Install).
+[Bit Scope](https://teambit.github.io/bit/bit-scope.html)
 
-2. [Quick getting started manual](https://github.com/teambit/bit/wiki/Getting-Started)
+[Bit component](https://teambit.github.io/bit/bit-component.html)
 
-Head over to Bit's [wiki pages](https://github.com/teambit/bit/wiki) for more information.
+[Bit environment](https://teambit.github.io/bit/bit-component.html#component-environment)
 
-## Contributing to Bit
+[Bit on the server](https://teambit.github.io/bit/bit-on-the-server.html)
+
+[CLI reference](https://teambit.github.io/bit/cli-reference.html)
+
+## Installation
+
+For our different installation methods, please visit our docs [installation section](https://teambit.github.io/bit/installation.html).
+
+## Quick start
+
+Here is a [getting started guide](https://teambit.github.io/bit/getting-started.html).
+
+## Contributing
 
 Contributions are always welcome, no matter how large or small. Before contributing, please read the [code of conduct](CODE_OF_CONDUCT.md).
 
 See [Contributing](CONTRIBUTING.md).
+
+## Feedback
+
+Feedbacks are more than welcome: [team@bitsrc.io](mailto:team@bitsrc.io)
+
+## License
+
+Apache License, Version 2.0
+
+![Analytics](https://ga-beacon.appspot.com/UA-96032224-1/bit/readme)
