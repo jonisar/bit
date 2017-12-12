@@ -15,18 +15,14 @@
 
 [Community](https://bitsrc.io) • [Docs](https://docs.bitsrc.io) • [Video](https://www.youtube.com/watch?v=vm_oOghNEYs) • [Examples](https://bitsrc.io/bit/movie-app#styles) • [Gitter](https://gitter.im/bit-src/Bit) • [Blog](https://blog.bitsrc.io/) 
 
-Up until now, sharing code between repositories meant maintaining additional repositories and packages. As a result, overhead, discoverability and maintainability quickly became an issue. 
+Git is great for collaborating on a single repo.  
+Bit is a Git extension for isolation and synchronization of source-code components between repositories. 
 
-Bit is a Git extension for isolation and synchronization of reusable source-code components directly between repositories. 
-It enables you to share reusable components directly from your repository and make them individually available to discover, import and update from other repositories.
+* **Isolate components** in your repository by pointing out subsets of files as reusable components. Bit will provide full control over their dependency graph, enable you to track changes, tag cross-component versions and more. 
 
-Key features:
+* **Sync components** between repositories. Get notified and merge component changes made in the different repositories by leveraging integrations to Git's comparison and merge utilities.
 
-* **Isolate components** in your repository by pointing out subsets of files as reusable components. Bit will provide full control over their dependency graph, enables you to track changes, tag cross-component versions and more. 
-
-* **Sync components** between repositories. Once components from one repo are imported into another repo, you can get notified and merge component changes made in the different repositories by leveraging integrations to Git's comparison and merge utilities.
-
-* **Extend Bit** to play with components. You can use extensions to visually render your components, test and compile them, parse and present useful information from the inline docs and even publish your components to NPM (released in the next weeks).
+* **Extend Bit** to experience components. You can use extensions to visually render your components, test and compile them, parse and present useful information from the inline docs and even publish your components to NPM (soon).
 
 Bit is a collaborative open source project, actively maintained by a venture-backed team and used by different organizations and OSS communities.
 
